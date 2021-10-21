@@ -39,12 +39,15 @@ Il est sur plusieurs niveaux/couches .
 
 $kubectl apply -f ./Kubernetes/nginx.yaml
 
+
 2. Liste des déploiements
 
 $kubectl get deployment nginx-deployment
 
 NAME               READY   UP-TO-DATE   AVAILABLE   AGE
+
 nginx-deployment   3/3     3            3           16m
+
 
 3. Services
 
@@ -55,14 +58,18 @@ kubectl get service nginx-service
 NAME            TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)   AGE
 
 nginx-service   ClusterIP   10.99.80.232   <none>        80/TCP    11s
+  
+  
 
 4. Recupère la liste des pods
 
 $ kubectl get pods
+  
 NAME                                READY   STATUS    RESTARTS   AGE
   
 nginx-deployment-549d886486-6xnbg   1/1     Running   0          2m45s
 
+  
 
 # ANSIBLE 
 
@@ -70,4 +77,5 @@ Le playbook va dans un premier temps vérifier l'existence des packages Docker, 
 
 
 Cette commande pour éxecuter l'ensemble des tâches regroupées.
+  
 $ ansible-playbook palybook.yml
