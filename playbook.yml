@@ -1,0 +1,29 @@
+---
+- hosts: localhost
+  tasks:   
+    - name: ensure docker is installed
+      apt:
+        name: docker
+        state: present
+      ignore_errors: yes
+    - name: ensure docker is started and enabled
+      systemd:
+        name: docker
+        state: started
+        enabled: true  
+      ignore_errors: yes
+
+- hosts: localhost
+  gather_facts: no
+  tasks:
+    - name: build container image
+      docker_image:
+        name: democontainer:v1.0
+        build:
+          path: ./
+          source: build
+        state: present
+
+#add helm package 
+#automatiser helm
+...

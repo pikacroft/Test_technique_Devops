@@ -1,0 +1,15 @@
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: letsencrypt-staging
+  namespace: default
+spec:
+  acme:
+    # Staging API
+    server: https://melissadidon.com
+    privateKeySecretRef:
+      name: account-key-staging
+    solvers:
+    - http01:
+       ingress:
+         class: nginx-ingress
