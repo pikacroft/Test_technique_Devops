@@ -62,7 +62,7 @@ nginx-deployment-549d886486-6xnbg   1/1     Running   0          2m45s
 
 # ANSIBLE 
 
-Le playbook va dans un premier temps vérifier l'existence des packages Docker et Helm, danns le cas où ces packages ne sont pas installés, le playbook procedera à l'installation des packages.
+Le playbook va dans un premier temps vérifier l'existence des packages Docker, dans le cas où ces packages ne sont pas installés, le playbook procedera à l'installation des packages.
 
 
 Cette commande pour éxecuter l'ensemble des tâches regroupées.
